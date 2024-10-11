@@ -5,4 +5,5 @@ run "python3 -m uvicorn main:app --reload" to start api
 and "ng serve -o" to start ui.
 
 
-<img width="621" alt="image" src="https://github.com/user-attachments/assets/dbd6fb0a-3519-432a-bcd7-f321be187d57">
+<img width="641" alt="image" src="https://github.com/user-attachments/assets/5b4d5680-a1b7-4c74-9699-c5e538f863c8">
+
