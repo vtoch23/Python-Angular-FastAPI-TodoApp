@@ -1,14 +1,7 @@
-A todo app created with Python as backend and Angular front end.
+A todo app created with Python as backend and Angular front end which uses mysql server database.
 
-run 
-python3 -m uvicorn main:app --reload
-to start api 
+run "python3 -m uvicorn main:app --reload" to start api 
 
-and
+and "ng serve -o" to start ui.
 
-ng serve -o
-
-to start ui
-
-The project uses mysql database.
 
