@@ -11,23 +11,21 @@
   <div class="p-3 max-w-md">
     <input class="input w-80 h-8 shadow mt-2 rounded-sm bg-slate-200" type="text" [(ngModel)]="newTask">
   </div>
-  <div
+  <button
     class="flex-col items-center inline-block bg-pink-500 text-white font-bold px-6 py-2 mb-4  rounded hover:bg-pink-300 shover:text-indigo-100 hadow"
-    (click)="add_task()">Add Task</div>
+    (click)="add_task()">Add Task</button>
   <div class="bg-white max-w-lg mx-auto w-full py-2 px-1 flex-col flex ">
     <ul>
       @for (item of tasks; track item) {
-        <li class="m-7">{{item.task}}
-          <p class="float-right">
-          <button
-          class="shadow text-sm right-0 font-bold px-3 py-2 text-slate-600 rounded-lg hover:bg-slate-100 hover:text-slate-900"
-          (click)="delete_task(item.id)">Delete Task
-        </button></p>
+        <li class="m-7 border-b-2 py-5">{{item.task}}
+          <p class="float-right mb-2">
+              <button
+                class="shadow text-sm right-0 font-bold px-4 py-2 text-slate-600 rounded-lg hover:bg-slate-100 hover:text-slate-900"
+                (click)="delete_task(item.id)">Delete Task
+            </button>
+          </p>
         </li> 
-        
-        
       }
     </ul>
-
   </div>
 </body>
