@@ -1,0 +1,16 @@
+<div style="margin: 100px">
+  <h2 class="text-3xl font-bold" style="background-color: aqua; text-align: center;">Todo App</h2>
+<div></div>
+  <input class="rounded-full bg-slate-200 "
+    type="text" 
+    [(ngModel)]="newTask">
+    <button class="font-bold px-3 py-2 text-slate-700 rounded-lg hover:bg-slate-100" (click)="add_task()">Add Task</button>
+
+  <ul>
+     @for (item of tasks; track item) {
+    <li>{{item.task}}</li> <button class="font-bold px-3 py-2 text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900"(click)="delete_task(item.id)">Delete Task</button>
+  }
+  
+</ul>
+    
+</div>
