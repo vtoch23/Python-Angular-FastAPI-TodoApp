@@ -1,5 +1,13 @@
 A todo app created with Python as backend and Angular front end which uses mysql server database.
 
+To test, create a database in Workbench called mydb and create a table as per below:
+
+create table todo (
+id int auto_increment, 
+task char(100),
+primary key(id)
+)
+
 run "python3 -m uvicorn main:app --reload" to start api 
 
 and "ng serve -o" to start ui.
