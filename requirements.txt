@@ -1,0 +1,4 @@
+fastapi==0.115.4
+mysql-connector-python==9.1.0
+python-multipart==0.0.16
+uvicorn==0.32.0

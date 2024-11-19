@@ -23,7 +23,7 @@ app.add_middleware(
 
 @app.get("/")
 def root():
-    return {'message': "Hellow World"}
+    return {'message': "Hello World"}
 
 
 @app.get("/get_tasks")
