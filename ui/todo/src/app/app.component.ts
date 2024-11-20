@@ -14,7 +14,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     HttpClientModule, 
     ReactiveFormsModule,
-    RouterOutlet
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
