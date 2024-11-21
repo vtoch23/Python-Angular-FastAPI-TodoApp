@@ -1,4 +1,4 @@
-A todo app created with Python as backend and Angular front end which uses mysql server database.
+A todo app created with Python as backend and Angular front end which uses mysql server database and Tailwind CSS.
 
 To test, create a database in Workbench called mydb and create a table as per below:
 
