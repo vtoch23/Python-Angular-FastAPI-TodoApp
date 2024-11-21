@@ -73,3 +73,20 @@ def test_get_tasks(mock_connect):
     assert cursor.fetchall.call_count == 1
     cursor.execute.assert_called_once()
     cursor.execute.assert_called_with('select * from todo')
+
+
+@patch('main.conn')
+def test_delete_all(mock_connect):
+    mysql = mock_connect
+    cursor = mock_connect.cursor(dictionary=True)
+    mysql.cursor.return_value = cursor
+    cursor.fetchall.return_value = []
+
+    response = client.post("/delete_all", data={'tasks': [{'id': 1, 'task': "Test Task"}]})
+
+    assert response.status_code == 200
+    assert response.text == '"All Tasks Deleted Successfully"'
+
+    assert mysql.cursor.call_count == 2
+    cursor.execute.assert_called_once()
+    cursor.execute.assert_called_with('delete from todo')

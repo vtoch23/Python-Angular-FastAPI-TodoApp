@@ -58,4 +58,12 @@ export class AppComponent {
       this.get_tasks();
     })
   }
+
+  delete_all(){
+      let body = new FormData();
+      body.append('tasks', this.tasks);
+      this.http.post(this.APIURL+"delete_all", body).subscribe((res) => {
+        this.get_tasks();
+      })
+  }
 }

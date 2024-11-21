@@ -48,3 +48,11 @@ def delete_task(id: str = Form(...)):
     cursor.execute("delete from todo where id=%s", (id, ))
     conn.commit()
     return "Deleted Successfully"
+
+
+@app.post("/delete_all")
+def delete_all(tasks: str = Form(...)):
+    cursor = conn.cursor()
+    cursor.execute("delete from todo")
+    conn.commit()
+    return "All Tasks Deleted Successfully"
