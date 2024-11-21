@@ -19,7 +19,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'todo';
+  title = 'My Todo App';
   tasks: any = [];
   newTask = "";
 
