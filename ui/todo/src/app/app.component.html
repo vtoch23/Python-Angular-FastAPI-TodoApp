@@ -1,31 +1,37 @@
-<head class="bg-gray-200">
+<div data-cy="app-component" >
+
+  <head class="bg-gray-200">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1/0">
     <meta http-equiv="X-UA-Compatible">
-    <title> My Todo App</title>
+    <title data-cy="app-component-title">{{title}}</title>
     <link rel="stylesheet" href="/./public/build/tailwind.css">
-</head>
+  </head>
 
-<body class="bg-gray-100 flex flex-col items-center w-full py-3 ">
-  <h1 class="text-4xl font-bold text-center text-blue-500 py-4">Todo App</h1>
-  <div class="p-3 max-w-md">
-    <input class="input w-80 h-8 shadow mt-2 rounded-sm bg-slate-200" type="text" [(ngModel)]="newTask">
-  </div>
-  <button
-    class="flex-col items-center inline-block bg-pink-500 text-white font-bold px-6 py-2 mb-4  rounded hover:bg-pink-300 shover:text-indigo-100 hadow"
-    (click)="add_task()">Add Task</button>
-  <div class="bg-white max-w-lg mx-auto w-full py-2 px-1 flex-col flex ">
-    <ul>
-      @for (item of tasks; track item) {
-        <li class="m-7 border-b-2 py-5">{{item.task}}
-          <p class="float-right mb-2">
-              <button
-                class="shadow text-sm right-0 font-bold px-4 py-2 text-slate-600 rounded-lg hover:bg-slate-100 hover:text-slate-900"
-                (click)="delete_task(item.id)">Delete Task
+  <body data-cy="app-component-body" class="bg-gray-100 flex flex-col items-center w-full py-3 ">
+    <h1 data-cy="app-component-h1" class="text-4xl font-bold text-center text-blue-500 py-4">{{title}}</h1>
+    <div class="p-3 max-w-md">
+      <input data-cy="app-component-input" class="input w-80 h-8 shadow mt-2 rounded-sm bg-slate-200" type="text"
+        [(ngModel)]="newTask">
+    </div>
+    <button data-cy="app-component-button_add"
+      class="flex-col items-center inline-block bg-pink-500 text-white font-bold px-6 py-2 mb-4  rounded hover:bg-pink-300 shover:text-indigo-100 hadow"
+      (click)="add_task()">Add Task</button>
+    <div class="bg-white max-w-lg mx-auto w-full py-2 px-1 flex-col flex ">
+      <table data-cy="app-component-table">
+        @for (item of tasks; track item) {
+        <tr data-cy="app-component-row" class="m-7 border-b-2 py-5">
+          <td data-cy="app-component-task">{{item.task}}</td>
+          <td data-cy="app-component-date">{{item.date}}</td>
+          <td class="float-right mb-2">
+            <button data-cy="app-component-button_delete"
+              class="shadow text-sm right-0 font-bold px-4 py-2 text-slate-600 rounded-lg hover:bg-slate-100 hover:text-slate-900"
+              (click)="delete_task(item.id)">Delete Task
             </button>
-          </p>
-        </li> 
-      }
-    </ul>
-  </div>
-</body>
+          </td>
+        </tr>
+        }
+      </table>
+    </div>
+  </body>
+</div>
