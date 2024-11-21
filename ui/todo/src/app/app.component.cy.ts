@@ -115,5 +115,12 @@ describe('AppComponent Component Tests', () => {
         .find('[data-cy="app-component-button_delete"]').click();
       cy.getDataCy('app-component-task').should('not.contain', 'Task to be deleted');
     });
+
+    it('should delete all tasks', () => {
+      mount(AppComponent, createConfig({}));
+
+      cy.getDataCy('app-component-button_delete_all').click({force: true});
+      cy.getDataCy('app-component-task').should('not.exist');
+    });
   });
 });
