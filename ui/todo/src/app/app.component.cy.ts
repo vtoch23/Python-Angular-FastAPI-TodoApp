@@ -25,24 +25,6 @@ describe('AppComponent Component Tests', () => {
 
   beforeEach(() => {
     cy.viewport(800, 800);
-    // mount(AppComponent, createConfig({}))
-    //   .then((wrapper) => {
-    //     cy.spy(wrapper.component, 'delete_task').as('delete_task')
-    //   })
-    // });
-    // const len = cy.getDataCy('app-component-row').children.length;
-    // for(let n = 0; n < len; n ++) {
-    //   cy.wrap('@delete_task').invoke('delete_task');
-    // }
-    // const len = cy.getDataCy('app-component-row').children.length;
-    // for(let n = 0; n <= len; n ++){
-    //   cy.get('@delete_task').click({multiple: true, force: true})
-    // }
-    // for(let n = 0; n <= len; n ++){
-    //   cy.getDataCy('app-component-button_delete').click({multiple: true, force: true})
-    // }
-
-    // cy.getDataCy('app-component-button_delete').click({multiple: true})
   });
 
   it('should mount the component and display the title', () => {
