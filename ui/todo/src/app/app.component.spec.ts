@@ -36,8 +36,8 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it('app title should be "todo"', () => {
-    expect(app.title).toEqual('todo');
+  it('app title should be "My Todo App"', () => {
+    expect(app.title).toEqual('My Todo App');
   });
 
   it('should render title', () => {
@@ -114,6 +114,23 @@ describe('AppComponent', () => {
     const mockTasks = [
       { id: 2, task: 'Task 2' }
     ];
+    refreshReq.flush(mockTasks);
+
+    expect(app.tasks).toEqual(mockTasks);
+  });
+
+  it('should delete all tasks and refresh the task list', () => {
+    app.delete_all();
+
+    const req = httpTestingController.expectOne(app.APIURL + 'delete_all');
+    expect(req.request.method).toBe('POST');
+
+    req.flush({ success: true });
+
+    const refreshReq = httpTestingController.expectOne(app.APIURL + 'get_tasks');
+    expect(refreshReq.request.method).toBe('GET');
+
+    const mockTasks = [{}];
     refreshReq.flush(mockTasks);
 
     expect(app.tasks).toEqual(mockTasks);

@@ -17,6 +17,11 @@
     <button data-cy="app-component-button_add"
       class="flex-col items-center inline-block bg-pink-500 text-white font-bold px-6 py-2 mb-4  rounded hover:bg-pink-300 shover:text-indigo-100 hadow"
       (click)="add_task()">Add Task</button>
+
+    <button data-cy="app-component-button_delete_all"
+      class="flex-col items-center inline-block bg-blue-400 text-white font-bold px-6 py-2 mb-4  rounded bg-blue-400 shover:text-indigo-100 hadow"
+      (click)="delete_all()">Delete All Tasks</button>
+
     <div class="bg-white max-w-lg mx-auto w-full py-2 px-1 flex-col flex ">
       <table data-cy="app-component-table">
         @for (item of tasks; track item) {
