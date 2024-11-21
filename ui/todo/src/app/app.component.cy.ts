@@ -66,6 +66,13 @@ describe('AppComponent Component Tests', () => {
       cy.getDataCy('app-component-task').should('be.visible');
       cy.getDataCy('app-component-date').should('not.be.undefined')
     });
+
+    it('should display delete button', () => {
+      mount(AppComponent, createConfig({ tasks: [{ id: 1, task: 'Test Task1', date: new Date() }] }));
+  
+      cy.getDataCy('app-component-table').should('be.visible');
+      cy.getDataCy('app-component-button_delete').should('be.visible')
+    });
   })
   
   describe('functionality', () => {
@@ -100,13 +107,13 @@ describe('AppComponent Component Tests', () => {
     it('should delete a task', () => {
       mount(AppComponent, createConfig({}));
       
-        cy.getDataCy('app-component-input').type('Task to be deleted');
-          cy.getDataCy('app-component-button_add').click();
+      cy.getDataCy('app-component-input').type('Task to be deleted');
+      cy.getDataCy('app-component-button_add').click();
 
-          cy.getDataCy('app-component-row').contains('Task to be deleted')
-            .parent()
-            .find('[data-cy="app-component-button_delete"]').click();
-          cy.getDataCy('app-component-task').should('not.contain', 'Task to be deleted');
+      cy.getDataCy('app-component-row').contains('Task to be deleted')
+        .parent()
+        .find('[data-cy="app-component-button_delete"]').click();
+      cy.getDataCy('app-component-task').should('not.contain', 'Task to be deleted');
     });
   });
 });
